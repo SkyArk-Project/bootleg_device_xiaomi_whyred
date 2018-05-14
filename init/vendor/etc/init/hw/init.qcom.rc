@@ -43,8 +43,7 @@ on init
     mkdir /persist 0771 root system
     mkdir /persistbak 0771 root system
 
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
+    # Support legacy path
     symlink /sdcard /storage/sdcard0
 
     # Create cgroup mount point for memory
