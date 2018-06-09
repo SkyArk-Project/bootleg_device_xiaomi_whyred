@@ -35,8 +35,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_VENDOR_PRODUCT_NAME := whyred
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="whyred-user 8.1.0 OPM1.171019.011 8.5.10 release-keys" \
-    DEVICE_MAINTAINERS="merothh / taran107"
+    PRIVATE_BUILD_DESC="whyred-user 8.1.0 OPM1.171019.011 8.5.10 release-keys"
 
 # Set BTLG Build to Shishufied
 BOOTLEG_BUILD_TYPE := Shishufied
