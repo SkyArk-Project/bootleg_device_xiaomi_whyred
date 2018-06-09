@@ -29,6 +29,9 @@ BOARD_VENDOR := xiaomi
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
+# Enable 64-bits binder
+TARGET_USES_64_BIT_BINDER := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm636
 TARGET_NO_BOOTLOADER := true
@@ -50,9 +53,6 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := kryo
-
-TARGET_USES_UEFI := true
-TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
@@ -78,7 +78,7 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
-BOARD_SUPPORTS_SOUND_TRIGGER := true
+BOARD_SUPPORTS_SOUND_TRIGGER := false
 AUDIO_FEATURE_ENABLED_COMPRESS_CAPTURE := false
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
 AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := false
@@ -135,7 +135,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
 TARGET_USES_QTI_CAMERA2CLIENT := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
-TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -157,14 +156,10 @@ TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
-
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
-
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
-
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-
 VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 
@@ -183,17 +178,12 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
-#TARGET_INIT_VENDOR_LIB := libinit_whyred
-#TARGET_RECOVERY_DEVICE_MODULES := libinit_whyred
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
-
-# Lineage Hardware
-#BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/lineagehw
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -229,17 +219,12 @@ TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/fstab.qcom
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-# Releasetools
-#TARGET_RECOVERY_UPDATER_LIBS := libinit_whyred
-#TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
-
 # RIL
 TARGET_RIL_VARIANT := caf
 PROTOBUF_SUPPORTED := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-#include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 PRODUCT_VENDOR_MOVE_ENABLED := true
