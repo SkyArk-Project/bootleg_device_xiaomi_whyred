@@ -204,10 +204,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
-# FM
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
 
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
