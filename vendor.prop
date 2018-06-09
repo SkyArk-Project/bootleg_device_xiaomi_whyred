@@ -71,6 +71,9 @@ persist.radio.VT_HYBRID_ENABLE=1
 #persist.ts.postmakeup=true
 #persist.ts.rtmakeup=true
 
+# Camera
+persist.camera.HAL3.enabled=1
+
 # disable CM's blacklist
 #ro.telephony.cm_blklst_on=0
 
