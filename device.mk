@@ -128,21 +128,16 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 
 # Camera
-#PRODUCT_PACKAGES += \
-#    camera.sdm660 \
-#    libmm-qcamera
-
 PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
     Snap
 
-#PRODUCT_PACKAGES += \
-#    android.hardware.camera.provider@2.4-impl \
-#    android.hardware.camera.provider@2.4-service \
-#    camera.device@1.0-impl \
-#    camera.device@3.2-impl \
-#    camera.device@3.3-impl \
-#    vendor.qti.hardware.camera.device@1.0 \
-#    vendor.qti.hardware.camera.device@1.0_vendor
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.camera.device@1.0 \
+    vendor.qti.hardware.camera.device@1.0_vendor
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -241,8 +236,7 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.manager@1.0 \
-#    android.hidl.manager@1.0-java
+    android.hidl.manager@1.0
 
 # IDC
 PRODUCT_COPY_FILES += \
@@ -252,12 +246,6 @@ PRODUCT_COPY_FILES += \
 # Init
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,${LOCAL_PATH}/init/vendor,$(TARGET_COPY_OUT_VENDOR))
-
-# IPv6
-#PRODUCT_PACKAGES += \
-#    ebtables \
-#    ethertypes \
-#    libebtc
 
 # IRQ
 PRODUCT_COPY_FILES += \
@@ -348,10 +336,6 @@ PRODUCT_PACKAGES += \
     rcs_service_aidl.xml \
     rcs_service_api \
     rcs_service_api.xml
-
-# Recovery
-#PRODUCT_PACKAGES += \
-#    librecovery_updater_whyred
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
